@@ -1,0 +1,50 @@
+{
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "B79AF27EA8A23914C957AE57D4F7706D23D82EC6" : 0,
+    "14A97B5652AF7CBB8E4F47CE39F1E17CF7B3AD09" : 0,
+    "BEB065F5A5AF55A841A117FDD1C0095D117176E1" : 0,
+    "57C931977B7D2307CC013C2BD93F90CF7C676790" : 0,
+    "84E260F88D2CB3384881FB5CA3D4F2ADC480059A" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "60E5DA34-3092-43CC-99C6-956049206568",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "B79AF27EA8A23914C957AE57D4F7706D23D82EC6" : "Denon%20Remote\/DeferredTCPSocket\/Result\/",
+    "14A97B5652AF7CBB8E4F47CE39F1E17CF7B3AD09" : "",
+    "BEB065F5A5AF55A841A117FDD1C0095D117176E1" : "Denon%20Remote\/DeferredTCPSocket\/",
+    "57C931977B7D2307CC013C2BD93F90CF7C676790" : "Denon%20Remote\/DeferredTCPSocket\/Result\/Box\/",
+    "84E260F88D2CB3384881FB5CA3D4F2ADC480059A" : "Denon%20Remote\/DeferredTCPSocket\/Deferred\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Denon Remote",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Denon Remote.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:thomasnordquist\/misc.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "14A97B5652AF7CBB8E4F47CE39F1E17CF7B3AD09"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/robrix\/Box.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "57C931977B7D2307CC013C2BD93F90CF7C676790"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:bignerdranch\/Deferred.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "84E260F88D2CB3384881FB5CA3D4F2ADC480059A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:bignerdranch\/Result.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B79AF27EA8A23914C957AE57D4F7706D23D82EC6"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/bignerdranch\/DeferredTCPSocket.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BEB065F5A5AF55A841A117FDD1C0095D117176E1"
+    }
+  ]
+}

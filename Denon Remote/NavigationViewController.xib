@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MediaViewController" customModule="Denon_Remote" customModuleProvider="target">
+            <connections>
+                <outlet property="navPlayer" destination="zes-Cb-IDd" id="fob-Qu-XTz"/>
+                <outlet property="navRemote" destination="EZM-Ip-CgJ" id="JY0-gc-aqM"/>
+                <outlet property="navSettings" destination="8oC-J3-Usg" id="HSh-jl-U4X"/>
+                <outlet property="navSpeakers" destination="RxE-Na-Cvm" id="kY7-Wt-Naq"/>
+                <outlet property="navigationView" destination="4yd-Zn-686" id="oUX-e0-j0B"/>
+                <outlet property="overlayView" destination="0Pe-OL-e8a" id="J7L-bA-nhr"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY" customClass="StyledView" customModule="Denon_Remote" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="4yd-Zn-686" customClass="StyledView" customModule="Denon_Remote" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="55" height="300"/>
+                    <subviews>
+                        <button translatesAutoresizingMaskIntoConstraints="NO" id="8oC-J3-Usg" userLabel="EcoButton" customClass="StyledButton" customModule="Denon_Remote" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="135" width="55" height="55"/>
+                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="sliders" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="dCD-YG-eOo">
+                                <behavior key="behavior" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="navigate:" target="-2" id="nGd-cR-nH6"/>
+                            </connections>
+                        </button>
+                        <button translatesAutoresizingMaskIntoConstraints="NO" id="zes-Cb-IDd" userLabel="EcoButton" customClass="StyledButton" customModule="Denon_Remote" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="245" width="55" height="55"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="55" id="BTE-50-rXd"/>
+                                <constraint firstAttribute="width" constant="55" id="iNX-ls-A2R"/>
+                            </constraints>
+                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="player" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Rw8-Pe-6qh">
+                                <behavior key="behavior" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="navigate:" target="-2" id="N1s-vu-lsc"/>
+                            </connections>
+                        </button>
+                        <button translatesAutoresizingMaskIntoConstraints="NO" id="EZM-Ip-CgJ" userLabel="EcoButton" customClass="StyledButton" customModule="Denon_Remote" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="190" width="55" height="55"/>
+                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="remote" imagePosition="overlaps" alignment="center" controlSize="mini" imageScaling="proportionallyUpOrDown" inset="2" id="OEY-w9-r2P">
+                                <behavior key="behavior" lightByContents="YES"/>
+                                <font key="font" metaFont="miniSystem"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="navigate:" target="-2" id="bkk-Zf-cwU"/>
+                            </connections>
+                        </button>
+                        <button translatesAutoresizingMaskIntoConstraints="NO" id="RxE-Na-Cvm" userLabel="EcoButton" customClass="StyledButton" customModule="Denon_Remote" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="80" width="55" height="55"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="55" id="iTf-Ns-Zby"/>
+                                <constraint firstAttribute="height" constant="55" id="qy6-ZG-I5A"/>
+                            </constraints>
+                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="volume-off" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="JqE-Wh-UtE">
+                                <behavior key="behavior" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="navigate:" target="-2" id="E5Y-Ul-wF9"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="EZM-Ip-CgJ" firstAttribute="leading" secondItem="4yd-Zn-686" secondAttribute="leading" id="CsH-tf-jsQ"/>
+                        <constraint firstItem="EZM-Ip-CgJ" firstAttribute="top" secondItem="zes-Cb-IDd" secondAttribute="bottom" id="HAK-QM-2fj"/>
+                        <constraint firstItem="EZM-Ip-CgJ" firstAttribute="height" secondItem="zes-Cb-IDd" secondAttribute="height" id="K5a-86-TZJ"/>
+                        <constraint firstItem="8oC-J3-Usg" firstAttribute="height" secondItem="zes-Cb-IDd" secondAttribute="height" id="KhS-e8-IvW"/>
+                        <constraint firstItem="EZM-Ip-CgJ" firstAttribute="width" secondItem="zes-Cb-IDd" secondAttribute="width" id="RTC-nK-iSu"/>
+                        <constraint firstItem="zes-Cb-IDd" firstAttribute="leading" secondItem="4yd-Zn-686" secondAttribute="leading" id="RwV-eI-0RQ"/>
+                        <constraint firstItem="8oC-J3-Usg" firstAttribute="leading" secondItem="4yd-Zn-686" secondAttribute="leading" id="TEO-OH-6sv"/>
+                        <constraint firstItem="8oC-J3-Usg" firstAttribute="top" secondItem="EZM-Ip-CgJ" secondAttribute="bottom" id="Y7K-Uu-qCY"/>
+                        <constraint firstItem="zes-Cb-IDd" firstAttribute="top" secondItem="4yd-Zn-686" secondAttribute="top" id="eif-vY-vdJ"/>
+                        <constraint firstItem="8oC-J3-Usg" firstAttribute="width" secondItem="zes-Cb-IDd" secondAttribute="width" id="jvo-9h-H1H"/>
+                        <constraint firstItem="RxE-Na-Cvm" firstAttribute="top" secondItem="8oC-J3-Usg" secondAttribute="bottom" id="sY2-aE-P6a"/>
+                        <constraint firstAttribute="width" constant="55" id="v5n-cI-2r8"/>
+                        <constraint firstItem="RxE-Na-Cvm" firstAttribute="leading" secondItem="4yd-Zn-686" secondAttribute="leading" id="yOI-aY-yFz"/>
+                    </constraints>
+                </customView>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="yNG-Rz-jIe">
+                    <rect key="frame" x="55" y="256" width="395" height="44"/>
+                    <subviews>
+                        <button ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HBn-c4-Azt" userLabel="Play" customClass="StyledButton" customModule="Denon_Remote" customModuleProvider="target">
+                            <rect key="frame" x="349" y="0.0" width="35" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="hcm-vc-Vf3"/>
+                            </constraints>
+                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="power-off" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="c7g-WL-BOF">
+                                <behavior key="behavior" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="powerAction:" target="-2" id="c8f-pC-7GM"/>
+                            </connections>
+                        </button>
+                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AQv-G6-s0h" customClass="StyledButton" customModule="Denon_Remote" customModuleProvider="target">
+                            <rect key="frame" x="310" y="5" width="30" height="30"/>
+                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="input-select" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="QIv-xh-IqB">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Fg-qq-32e">
+                            <rect key="frame" x="50" y="8" width="254" height="27"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Input" id="C7M-Ss-eMn">
+                                <font key="font" metaFont="system" size="22"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="7KO-B0-Ypr"/>
+                    </constraints>
+                </customView>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="0Pe-OL-e8a">
+                    <rect key="frame" x="55" y="0.0" width="395" height="256"/>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="0Pe-OL-e8a" secondAttribute="bottom" id="IvF-R1-PMe"/>
+                <constraint firstItem="yNG-Rz-jIe" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="JaY-KD-0Vf"/>
+                <constraint firstItem="yNG-Rz-jIe" firstAttribute="leading" secondItem="4yd-Zn-686" secondAttribute="trailing" id="NVR-go-gCf"/>
+                <constraint firstItem="0Pe-OL-e8a" firstAttribute="leading" secondItem="4yd-Zn-686" secondAttribute="trailing" id="R8D-dU-YGE"/>
+                <constraint firstItem="4yd-Zn-686" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="ZOx-C3-viw"/>
+                <constraint firstAttribute="trailing" secondItem="0Pe-OL-e8a" secondAttribute="trailing" id="ZoF-Fc-t9p"/>
+                <constraint firstItem="0Pe-OL-e8a" firstAttribute="top" secondItem="yNG-Rz-jIe" secondAttribute="bottom" id="ba4-ms-GKg"/>
+                <constraint firstItem="4yd-Zn-686" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="gtN-3h-OM4"/>
+                <constraint firstAttribute="trailing" secondItem="yNG-Rz-jIe" secondAttribute="trailing" id="oeK-KK-ZDU"/>
+                <constraint firstAttribute="bottom" secondItem="4yd-Zn-686" secondAttribute="bottom" id="y7Z-bR-80T"/>
+            </constraints>
+            <point key="canvasLocation" x="154" y="237"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="input-select" width="128" height="128"/>
+        <image name="player" width="128" height="128"/>
+        <image name="power-off" width="128" height="128"/>
+        <image name="remote" width="128" height="128"/>
+        <image name="sliders" width="128" height="128"/>
+        <image name="volume-off" width="128" height="128"/>
+    </resources>
+</document>
