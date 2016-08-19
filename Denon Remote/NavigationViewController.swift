@@ -13,6 +13,7 @@ import PromiseKit
 
 
 class NavigationViewController: NSViewController {
+    var inputMenu : NSMenu?
     var overlayController : NSViewController?
     @IBOutlet var sourceLabel : NSTextField!
 
@@ -143,5 +144,28 @@ class NavigationViewController: NSViewController {
         sourceLabel.textColor = Theme.fontColor
 
         view.layer?.backgroundColor = Theme.backgroundColor.CGColor
+    }
+
+    @IBAction func selectInput(sender: AnyObject) {
+        inputMenu = NSMenu()
+
+
+        InputSources.sharedInstance.sources.forEach({ source in
+            let item = NSMenuItem(title: source.label, action: #selector(self.setInput), keyEquivalent: "")
+            item.representedObject = source.name
+            inputMenu?.addItem(item)
+        })
+        inputMenu?.popUpMenuPositioningItem(nil, atLocation: NSEvent.mouseLocation(), inView: nil)
+    }
+
+    func setInput(menuItem: NSMenuItem) {
+        // get the source name
+        if let sourceName = menuItem.representedObject as? String {
+            //find source with this name
+            if let source = InputSources.sharedInstance.sources.filter({$0.name == sourceName}).first {
+                //switch to source
+                DenonCommand.SIGNAL.PARAMETER(source).execute()
+            }
+        }
     }
 }

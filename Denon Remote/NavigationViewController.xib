@@ -14,6 +14,7 @@
                 <outlet property="navSpeakers" destination="RxE-Na-Cvm" id="kY7-Wt-Naq"/>
                 <outlet property="navigationView" destination="4yd-Zn-686" id="oUX-e0-j0B"/>
                 <outlet property="overlayView" destination="0Pe-OL-e8a" id="J7L-bA-nhr"/>
+                <outlet property="powerButton" destination="HBn-c4-Azt" id="VBD-zJ-6QO"/>
                 <outlet property="sourceLabel" destination="2Fg-qq-32e" id="SVp-f3-Uzw"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -105,8 +106,26 @@
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="yNG-Rz-jIe">
                     <rect key="frame" x="55" y="256" width="395" height="44"/>
                     <subviews>
+                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AQv-G6-s0h" customClass="StyledButton" customModule="Denon_Remote" customModuleProvider="target">
+                            <rect key="frame" x="310" y="5" width="30" height="30"/>
+                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="input-select" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="QIv-xh-IqB">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="selectInput:" target="-2" id="8i4-LX-vij"/>
+                            </connections>
+                        </button>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Fg-qq-32e">
+                            <rect key="frame" x="50" y="8" width="254" height="27"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Input" id="C7M-Ss-eMn">
+                                <font key="font" metaFont="system" size="22"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
                         <button ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HBn-c4-Azt" userLabel="Play" customClass="StyledButton" customModule="Denon_Remote" customModuleProvider="target">
-                            <rect key="frame" x="349" y="0.0" width="35" height="35"/>
+                            <rect key="frame" x="350" y="4" width="35" height="35"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="25" id="hcm-vc-Vf3"/>
                             </constraints>
@@ -118,35 +137,6 @@
                                 <action selector="powerAction:" target="-2" id="c8f-pC-7GM"/>
                             </connections>
                         </button>
-                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AQv-G6-s0h" customClass="StyledButton" customModule="Denon_Remote" customModuleProvider="target">
-                            <rect key="frame" x="310" y="5" width="30" height="30"/>
-                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="input-select" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="QIv-xh-IqB">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                <font key="font" metaFont="system"/>
-                            </buttonCell>
-                        </button>
-                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Fg-qq-32e">
-                            <rect key="frame" x="50" y="8" width="254" height="27"/>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Input" id="C7M-Ss-eMn">
-                                <font key="font" metaFont="system" size="22"/>
-                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                            </textFieldCell>
-                        </textField>
-                        <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xId-im-v8m">
-                            <rect key="frame" x="229" y="8" width="76" height="26"/>
-                            <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="ljd-wO-WXf">
-                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                <font key="font" metaFont="menu"/>
-                                <menu key="menu" id="8Va-Ee-j2s">
-                                    <items>
-                                        <menuItem title="Item 1" id="6Oh-Wv-y88"/>
-                                        <menuItem title="Item 2" id="HKs-mA-5BX"/>
-                                        <menuItem title="Item 3" id="SmQ-nz-9o8"/>
-                                    </items>
-                                </menu>
-                            </popUpButtonCell>
-                        </popUpButton>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="7KO-B0-Ypr"/>

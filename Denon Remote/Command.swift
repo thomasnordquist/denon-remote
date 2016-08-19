@@ -12,6 +12,9 @@ import PromiseKit
 struct DenonCommand {
     struct SIGNAL {
         static let QUERY = CommandType(prefix: "SI", parameter: "?", lines: 2)
+        static func PARAMETER(source : InputSource) -> CommandType {
+            return CommandType(prefix: "SI", parameter: source.name, lines: 1)
+        }
     }
 
     struct POWER {
