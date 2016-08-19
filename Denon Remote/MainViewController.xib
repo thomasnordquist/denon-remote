@@ -19,6 +19,8 @@
                 <outlet property="pauseButton" destination="TtN-4s-fUw" id="NB1-4g-aw0"/>
                 <outlet property="playButton" destination="FkG-yc-qsA" id="15U-4l-Uns"/>
                 <outlet property="previousButton" destination="99e-gD-9VV" id="wlh-iD-0jp"/>
+                <outlet property="sleepButton" destination="I7E-XM-YS4" id="bnS-cl-5NN"/>
+                <outlet property="sleepLabel" destination="tQf-AR-RPR" id="xOU-NU-krz"/>
                 <outlet property="songLabel" destination="HpN-mv-NDR" id="WXn-tc-YH7"/>
                 <outlet property="view" destination="aXF-5F-gyC" id="WOh-13-6dI"/>
                 <outlet property="volumeSlider" destination="CNy-y6-bts" id="W6K-pX-Lc0"/>
@@ -26,7 +28,7 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customView id="aXF-5F-gyC">
+        <customView id="aXF-5F-gyC" customClass="StyledView" customModule="Denon_Remote" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="395" height="256"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
@@ -86,7 +88,7 @@
                     </constraints>
                 </customView>
                 <button ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BWd-rs-jgh" userLabel="EcoButton" customClass="StyledButton" customModule="Denon_Remote" customModuleProvider="target">
-                    <rect key="frame" x="15" y="155" width="21" height="24"/>
+                    <rect key="frame" x="355" y="155" width="21" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="svH-vA-roU"/>
                     </constraints>
@@ -95,18 +97,8 @@
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                 </button>
-                <button ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I7E-XM-YS4" userLabel="EcoButton" customClass="StyledButton" customModule="Denon_Remote" customModuleProvider="target">
-                    <rect key="frame" x="360" y="149" width="21" height="24"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="25" id="VKG-w4-CHc"/>
-                    </constraints>
-                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="bed" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="J5g-DC-uBD">
-                        <behavior key="behavior" lightByContents="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Le-h6-1gT">
-                    <rect key="frame" x="13" y="187" width="27" height="17"/>
+                    <rect key="frame" x="366" y="149" width="27" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Eco" id="Xhq-0E-KVy">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -241,6 +233,27 @@
                         <constraint firstAttribute="trailing" secondItem="uN9-cH-Uqj" secondAttribute="trailing" constant="20" id="sbD-Ng-MYc"/>
                     </constraints>
                 </customView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tQf-AR-RPR" customClass="EventTextField" customModule="Denon_Remote" customModuleProvider="target">
+                    <rect key="frame" x="359" y="206" width="27" height="11"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" placeholderString="Off" id="D6M-0l-IWX">
+                        <font key="font" metaFont="system" size="8"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="event" value="SLP"/>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+                <button ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I7E-XM-YS4" userLabel="EcoButton" customClass="ContextButton" customModule="Denon_Remote" customModuleProvider="target">
+                    <rect key="frame" x="361" y="212" width="21" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="VKG-w4-CHc"/>
+                    </constraints>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="bed" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="J5g-DC-uBD">
+                        <behavior key="behavior" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
             </subviews>
         </customView>
     </objects>

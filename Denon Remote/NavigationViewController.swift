@@ -15,7 +15,7 @@ import PromiseKit
 class NavigationViewController: NSViewController {
     var inputMenu : NSMenu?
     var overlayController : NSViewController?
-    @IBOutlet var sourceLabel : NSTextField!
+    @IBOutlet var sourceLabel : EventTextField?
 
     @IBOutlet var overlayView : NSView!
     @IBOutlet var navigationView : StyledView!
@@ -44,6 +44,14 @@ class NavigationViewController: NSViewController {
         registerObserver()
         overlayController = MainViewController(nibName: "MainViewController", bundle: nil)
         displayCurrentViewController()
+
+        sourceLabel?.renderer = { input in
+            if let source = InputSources.sharedInstance.sources.filter({$0.name == input}).first {
+                return source.label
+            } else {
+                return input
+            }
+        }
     }
 
     override func viewWillAppear() {
@@ -165,8 +173,8 @@ class NavigationViewController: NSViewController {
     func tweakStyles() {
         navigationView.sublayer.backgroundColor = Theme.foregroundColor.CGColor
         navigationView.sublayer.cornerRadius = 0
-        sourceLabel.backgroundColor = NSColor.clearColor()
-        sourceLabel.textColor = Theme.fontColor
+        sourceLabel?.backgroundColor = NSColor.clearColor()
+        sourceLabel?.textColor = Theme.fontColor
 
         view.layer?.backgroundColor = Theme.backgroundColor.CGColor
     }

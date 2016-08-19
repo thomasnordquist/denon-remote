@@ -7,9 +7,7 @@
 //
 
 import XCTest
-import Alamofire
-import AlamofireImage
-import PromiseKit
+
 @testable import Denon_Remote
 
 class TestDecimalConversion: XCTestCase {

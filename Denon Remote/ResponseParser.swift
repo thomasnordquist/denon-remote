@@ -7,9 +7,10 @@
 //
 
 import Cocoa
-enum ResponseType {
-    case NUMBER_DECIMAL // fixed decimal (10.5 will be received as 105)
-    case NUMBER
+enum ResponseDataType : StringLiteralType {
+    case DECIMAL_FIXED // fixed decimal (10.5 will be received as 105)
+    case DECIMAL
+    case INTEGER_POSITIVE
     case STATE // boolean on/off
     case DISPLAY
     case STRING
@@ -32,9 +33,10 @@ enum ResponseState: String {
 let NOW_PLAYING = "Now Playing "
 
 class ResponseParser: NSObject {
-    static let prefixes : [(String, ResponseType)] = [
-        ("MV", .NUMBER_DECIMAL),
-        ("MVMAX ", .NUMBER),
+    static let prefixes : [(String, ResponseDataType)] = [
+        ("MV", .DECIMAL_FIXED),
+        ("MVMAX ", .DECIMAL),
+        ("SLP", .INTEGER_POSITIVE),
         ("PW", .STATE),
         ("MU", .STATE),
         ("NSE", .DISPLAY),
@@ -66,10 +68,19 @@ class ResponseParser: NSObject {
         let prefixStr = prefix.0
 
         switch prefix.1 {
-        case .NUMBER:
-            DataHub.setData(prefixStr, double: Double(valueStr)!)
+        case .DECIMAL:
+            if let double = Double(valueStr) {
+                DataHub.setData(prefixStr, double: double)
+            }
             break
-        case .NUMBER_DECIMAL:
+        case .INTEGER_POSITIVE:
+            if let int = Int(valueStr) {
+                DataHub.setData(prefixStr, int: int)
+            } else {
+                DataHub.setData(prefixStr, int: -1)
+            }
+            break
+        case .DECIMAL_FIXED:
             DataHub.setData(prefixStr, double: parse3DigitsFixedDecimal(valueStr))
             break
         case .STATE:

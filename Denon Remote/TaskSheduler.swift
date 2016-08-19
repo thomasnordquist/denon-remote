@@ -16,6 +16,7 @@ enum TaskIdentifier : StringLiteralType {
     case MUTE
     case DISPLAY
     case INPUT
+    case SLEEP
 }
 
 class Task {

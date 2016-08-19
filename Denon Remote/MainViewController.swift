@@ -24,6 +24,9 @@ class MainViewController: NSViewController {
     @IBOutlet var nextButton: NSButton!
     @IBOutlet var previousButton: NSButton!
 
+    @IBOutlet var sleepButton: ContextButton?
+    @IBOutlet var sleepLabel : EventTextField?
+
     @IBOutlet var ecoButton: NSButton!
     @IBOutlet var ecoLabel : NSTextField!
     @IBOutlet var volumeSlider: NSSlider!
@@ -74,6 +77,22 @@ class MainViewController: NSViewController {
         super.viewDidLoad()
         tweakStyles()
         registerObserver()
+        populateSleepButton()
+
+        setLabelRenderer()
+    }
+
+    func setLabelRenderer() {
+        sleepLabel?.renderer = { input in
+            if let val = Double(input) {
+                if(val > 0) {
+                    return String(Int(val)) + "m"
+                } else {
+                    return ""
+                }
+            }
+            return input
+        }
     }
 
     override func viewWillAppear() {
@@ -105,6 +124,13 @@ class MainViewController: NSViewController {
             }
         })
         sheduler.addTask(volumeTask)
+
+        let sleepTask = Task(identifier: .SLEEP, onScreenInterval: 45, offScreenInterval: 60, parallel: false, task:{
+            return DenonCommand.SLEEP.QUERY.execute().then{ command -> Promise<AnyObject> in
+                return Promise(command)
+            }
+        })
+        sheduler.addTask(sleepTask)
 
         let displayTask = Task(identifier: .DISPLAY, onScreenInterval: 2, offScreenInterval: 30, parallel: false, task:{
             return DenonCommand.INFO.DISPLAY.execute().then{ command -> Promise<AnyObject> in
@@ -159,6 +185,25 @@ class MainViewController: NSViewController {
                 self.volumeSlider.doubleValue = newValue
             }
         }
+    }
+
+    func populateSleepButton() {
+        guard let button = sleepButton else {
+            return
+        }
+
+        let sleepOff = ContextButtonItem(label: "Sleep Off") {
+            DenonCommand.SLEEP.OFF.execute()
+        }
+        button.addItem(sleepOff)
+
+        //10 to 120 minutes in 10 minute steps
+        (1...12).map{ $0 * 10 }.forEach({ minutes in
+            let contextItem = ContextButtonItem(label: String(minutes)) {
+                DenonCommand.SLEEP.PARAMETER(minutes).execute()
+            }
+            button.addItem(contextItem)
+        })
     }
 
     func tweakStyles() {

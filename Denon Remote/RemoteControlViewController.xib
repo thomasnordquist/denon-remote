@@ -9,7 +9,7 @@
             <connections>
                 <outlet property="buttonDown" destination="0cY-VD-bvx" id="RkG-SR-a83"/>
                 <outlet property="buttonEnter" destination="74T-Wb-75b" id="EWi-Z6-hER"/>
-                <outlet property="buttonLeft" destination="hwD-LG-u5c" id="8RV-Dx-erq"/>
+                <outlet property="buttonLeft" destination="hwD-LG-u5c" id="HP2-4Q-mWc"/>
                 <outlet property="buttonPageDown" destination="aoH-UT-klt" id="dOR-QI-eb8"/>
                 <outlet property="buttonPageUp" destination="jrw-tw-qEX" id="ND7-DK-lJ4"/>
                 <outlet property="buttonRight" destination="dgf-XM-83W" id="v5Z-NS-NJ6"/>
@@ -176,9 +176,6 @@
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
-                            <connections>
-                                <action selector="pressButton:" target="-2" id="8mi-vs-SKZ"/>
-                            </connections>
                         </button>
                         <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0cY-VD-bvx" customClass="StyledButton" customModule="Denon_Remote" customModuleProvider="target">
                             <rect key="frame" x="28" y="0.0" width="24" height="24"/>

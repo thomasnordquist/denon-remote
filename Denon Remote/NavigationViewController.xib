@@ -116,13 +116,16 @@
                                 <action selector="selectInput:" target="-2" id="8i4-LX-vij"/>
                             </connections>
                         </button>
-                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Fg-qq-32e">
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Fg-qq-32e" customClass="EventTextField" customModule="Denon_Remote" customModuleProvider="target">
                             <rect key="frame" x="50" y="8" width="254" height="27"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Input" id="C7M-Ss-eMn">
                                 <font key="font" metaFont="system" size="22"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="event" value="SI"/>
+                            </userDefinedRuntimeAttributes>
                         </textField>
                         <button ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HBn-c4-Azt" userLabel="Play" customClass="StyledButton" customModule="Denon_Remote" customModuleProvider="target">
                             <rect key="frame" x="350" y="4" width="35" height="35"/>

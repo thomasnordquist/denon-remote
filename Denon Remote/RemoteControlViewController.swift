@@ -35,8 +35,8 @@ class RemoteControlViewController: NSViewController {
         }
         TaskSheduler.sharedSheduler().stop()
 
-        cmd.execute().then{ _ -> Void in
-            DenonCommand.INFO.DISPLAY.execute().then{ command -> Void in
+        cmd.executeWithPriority(.HIGH).then{ _ -> Void in
+            DenonCommand.INFO.DISPLAY.executeWithPriority(.HIGH).then{ command -> Void in
                 let info = ResponseParser.parseDisplayResponse(command.response)
                 self.setDisplay(info)
             }
