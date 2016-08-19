@@ -57,7 +57,7 @@ class RemoteControlViewController: NSViewController {
         } else if (button == buttonLeft) {
             cmd = DenonCommand.CONTROL.LEFT
         } else if (button == buttonEnter) {
-            cmd = DenonCommand.CONTROL.LEFT
+            cmd = DenonCommand.CONTROL.ENTER
         } else if (button == buttonPageUp) {
             cmd = DenonCommand.CONTROL.PAGE_PREVIOUS
         } else if (button == buttonPageDown) {
