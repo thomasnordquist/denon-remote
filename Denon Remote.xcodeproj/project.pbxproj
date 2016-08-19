@@ -11,6 +11,9 @@
 		810566A81D66387B0035B68C /* DenonRadioItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810566A71D66387B0035B68C /* DenonRadioItem.swift */; };
 		810566AA1D6638D30035B68C /* DenonRadioResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810566A91D6638D30035B68C /* DenonRadioResponse.swift */; };
 		810566AC1D6638EF0035B68C /* DenonPlayCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810566AB1D6638EF0035B68C /* DenonPlayCommand.swift */; };
+		810566B41D6716560035B68C /* InputSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810566B31D6716560035B68C /* InputSources.swift */; };
+		810566B61D6724D20035B68C /* ContextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810566B51D6724D20035B68C /* ContextButton.swift */; };
+		810566B81D672A3F0035B68C /* TestCommandParametes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810566B71D672A3F0035B68C /* TestCommandParametes.swift */; };
 		810F34771D6491E200A65568 /* DenonRadio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F34761D6491E200A65568 /* DenonRadio.swift */; };
 		810F347B1D64BA4A00A65568 /* IRadioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F34791D64BA4A00A65568 /* IRadioViewController.swift */; };
 		810F347C1D64BA4A00A65568 /* IRadioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 810F347A1D64BA4A00A65568 /* IRadioViewController.xib */; };
@@ -58,6 +61,9 @@
 		810566A71D66387B0035B68C /* DenonRadioItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DenonRadioItem.swift; sourceTree = "<group>"; };
 		810566A91D6638D30035B68C /* DenonRadioResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DenonRadioResponse.swift; sourceTree = "<group>"; };
 		810566AB1D6638EF0035B68C /* DenonPlayCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DenonPlayCommand.swift; sourceTree = "<group>"; };
+		810566B31D6716560035B68C /* InputSources.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputSources.swift; sourceTree = "<group>"; };
+		810566B51D6724D20035B68C /* ContextButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextButton.swift; sourceTree = "<group>"; };
+		810566B71D672A3F0035B68C /* TestCommandParametes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestCommandParametes.swift; sourceTree = "<group>"; };
 		810F34761D6491E200A65568 /* DenonRadio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DenonRadio.swift; sourceTree = "<group>"; };
 		810F34791D64BA4A00A65568 /* IRadioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRadioViewController.swift; sourceTree = "<group>"; };
 		810F347A1D64BA4A00A65568 /* IRadioViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IRadioViewController.xib; sourceTree = "<group>"; };
@@ -145,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				81544FDA1D61DAFD00306A00 /* TestDecimalConversion.swift */,
+				810566B71D672A3F0035B68C /* TestCommandParametes.swift */,
 				81544FDC1D61DAFD00306A00 /* Info.plist */,
 			);
 			path = "Denon RemoteTests";
@@ -213,6 +220,7 @@
 				81FF137F1D5DE84300617C4C /* Command.swift */,
 				81CC21831D5E5CFD00D7EDBE /* MusicDisplayInformation.swift */,
 				81ABEE661D6231760080AB22 /* DisplayResponse.swift */,
+				810566B31D6716560035B68C /* InputSources.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -222,6 +230,7 @@
 			children = (
 				81C9196A1D5CBB6100EBB1C7 /* StyledView.swift */,
 				81FF137B1D5CC59A00617C4C /* StyledButton.swift */,
+				810566B51D6724D20035B68C /* ContextButton.swift */,
 			);
 			name = UIElements;
 			sourceTree = "<group>";
@@ -390,6 +399,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				810566B81D672A3F0035B68C /* TestCommandParametes.swift in Sources */,
 				81544FDB1D61DAFD00306A00 /* TestDecimalConversion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +411,7 @@
 				81C919581D5C991E00EBB1C7 /* AppDelegate.swift in Sources */,
 				810566A41D6605CA0035B68C /* IRadioScrollView.swift in Sources */,
 				81E149671D5E01F1005AAFA6 /* DataHub.swift in Sources */,
+				810566B41D6716560035B68C /* InputSources.swift in Sources */,
 				810F34771D6491E200A65568 /* DenonRadio.swift in Sources */,
 				81544FD01D5F5CD500306A00 /* TaskSheduler.swift in Sources */,
 				81FF137E1D5DD7C000617C4C /* CommandQueue.swift in Sources */,
@@ -420,6 +431,7 @@
 				81CC21841D5E5CFD00D7EDBE /* MusicDisplayInformation.swift in Sources */,
 				81ABEE611D6216130080AB22 /* RemoteControlViewController.swift in Sources */,
 				81C9196B1D5CBB6100EBB1C7 /* StyledView.swift in Sources */,
+				810566B61D6724D20035B68C /* ContextButton.swift in Sources */,
 				810F347B1D64BA4A00A65568 /* IRadioViewController.swift in Sources */,
 				81E149691D5E0495005AAFA6 /* ResponseParser.swift in Sources */,
 			);

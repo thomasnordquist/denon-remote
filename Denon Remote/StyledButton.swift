@@ -10,11 +10,12 @@ import Cocoa
 
 class StyledButton: NSButton {
     let sublayer: CALayer = CALayer()
+    var originalImage : NSImage!
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        originalImage = image
         tweakStyles()
-
     }
 
     func tweakStyles() {
@@ -23,17 +24,21 @@ class StyledButton: NSButton {
         self.layer?.addSublayer(sublayer)
         sublayer.frame = self.bounds
 
-        let _image : NSImage = image!.copy() as! NSImage
+        setColor(Theme.buttonColor)
+        setAlternateColor(Theme.buttonActiveColor)
+    }
 
-        image = _image.withTemplateColor(Theme.buttonColor)
-        //image = image!.scaledToCenter()
-        alternateImage = _image.withTemplateColor(Theme.buttonActiveColor)
+    func setColor(color: NSColor) {
+        image = originalImage.withTemplateColor(color)
+    }
+
+
+    func setAlternateColor(color: NSColor) {
+        alternateImage = originalImage.withTemplateColor(color)
     }
 
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
-
-        // Drawing code here.
     }
     
 }

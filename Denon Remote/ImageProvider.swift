@@ -21,7 +21,7 @@ class ImageProvider: NSObject {
                 return
             }
 
-            print(source)
+            //print(source)
 
             switch source {
             case "BT":

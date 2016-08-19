@@ -75,7 +75,6 @@ class CommandQueue: NSObject {
 
         for i in 0 ..< commandQueue.count {
             commandQueue[i].age += 1
-            print(commandQueue[i].age)
         }
 
         return oldestFirst.first!
