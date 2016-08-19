@@ -34,17 +34,25 @@ struct DisplayResponse {
     let response : [DisplayResponseLine]
 
     static func factory(input: [[String]]) -> DisplayResponse? {
-        let lines = input.map { lineInput -> DisplayResponseLine? in
-            return DisplayResponseLine.factory(lineInput)
+        let lines = input.map { DisplayResponseLine.factory($0) }
+        guard let firstLine = lines.indexOf({ $0?.lineNumber==0 }) else {
+            return nil
         }
-        .filter{ $0 != nil }
-        .sort{ $0!.lineNumber < $1!.lineNumber }
-        .map{ $0! }
 
-        if(lines.count != 9) {
+        // we start with the first line containing lineNumber 0
+        // this way we can keep prefixed but intact data
+        let result = lines.dropFirst(firstLine)
+            .filter{ $0 != nil }
+            .sort{ $0!.lineNumber < $1!.lineNumber }
+            .map{ $0! }
+
+        if(result.count != 9) {
             return nil
         } else {
-            return DisplayResponse(response: lines)
+            if(firstLine > 0) {
+                print("Display response prefixed but was able to recover")
+            }
+            return DisplayResponse(response: result)
         }
     }
 }

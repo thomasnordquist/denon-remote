@@ -5,14 +5,16 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="MediaViewController" customModule="Denon_Remote" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="NavigationViewController" customModule="Denon_Remote" customModuleProvider="target">
             <connections>
+                <outlet property="navIRadio" destination="kAw-N8-sDM" id="M35-vf-4Gx"/>
                 <outlet property="navPlayer" destination="zes-Cb-IDd" id="fob-Qu-XTz"/>
                 <outlet property="navRemote" destination="EZM-Ip-CgJ" id="JY0-gc-aqM"/>
                 <outlet property="navSettings" destination="8oC-J3-Usg" id="HSh-jl-U4X"/>
                 <outlet property="navSpeakers" destination="RxE-Na-Cvm" id="kY7-Wt-Naq"/>
                 <outlet property="navigationView" destination="4yd-Zn-686" id="oUX-e0-j0B"/>
                 <outlet property="overlayView" destination="0Pe-OL-e8a" id="J7L-bA-nhr"/>
+                <outlet property="sourceLabel" destination="2Fg-qq-32e" id="SVp-f3-Uzw"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -26,7 +28,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="55" height="300"/>
                     <subviews>
                         <button translatesAutoresizingMaskIntoConstraints="NO" id="8oC-J3-Usg" userLabel="EcoButton" customClass="StyledButton" customModule="Denon_Remote" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="135" width="55" height="55"/>
+                            <rect key="frame" x="0.0" y="67" width="55" height="55"/>
                             <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="sliders" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="dCD-YG-eOo">
                                 <behavior key="behavior" lightByContents="YES"/>
                                 <font key="font" metaFont="system"/>
@@ -50,7 +52,7 @@
                             </connections>
                         </button>
                         <button translatesAutoresizingMaskIntoConstraints="NO" id="EZM-Ip-CgJ" userLabel="EcoButton" customClass="StyledButton" customModule="Denon_Remote" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="190" width="55" height="55"/>
+                            <rect key="frame" x="0.0" y="123" width="55" height="55"/>
                             <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="remote" imagePosition="overlaps" alignment="center" controlSize="mini" imageScaling="proportionallyUpOrDown" inset="2" id="OEY-w9-r2P">
                                 <behavior key="behavior" lightByContents="YES"/>
                                 <font key="font" metaFont="miniSystem"/>
@@ -59,8 +61,8 @@
                                 <action selector="navigate:" target="-2" id="bkk-Zf-cwU"/>
                             </connections>
                         </button>
-                        <button translatesAutoresizingMaskIntoConstraints="NO" id="RxE-Na-Cvm" userLabel="EcoButton" customClass="StyledButton" customModule="Denon_Remote" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="80" width="55" height="55"/>
+                        <button misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RxE-Na-Cvm" userLabel="EcoButton" customClass="StyledButton" customModule="Denon_Remote" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="10" width="55" height="55"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="55" id="iTf-Ns-Zby"/>
                                 <constraint firstAttribute="height" constant="55" id="qy6-ZG-I5A"/>
@@ -73,16 +75,26 @@
                                 <action selector="navigate:" target="-2" id="E5Y-Ul-wF9"/>
                             </connections>
                         </button>
+                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kAw-N8-sDM" userLabel="EcoButton" customClass="StyledButton" customModule="Denon_Remote" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="182" width="55" height="55"/>
+                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="radio" imagePosition="overlaps" alignment="center" controlSize="mini" imageScaling="proportionallyUpOrDown" inset="2" id="N9K-A6-evh">
+                                <behavior key="behavior" lightByContents="YES"/>
+                                <font key="font" metaFont="miniSystem"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="navigate:" target="-2" id="YIy-H1-pWX"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
                         <constraint firstItem="EZM-Ip-CgJ" firstAttribute="leading" secondItem="4yd-Zn-686" secondAttribute="leading" id="CsH-tf-jsQ"/>
-                        <constraint firstItem="EZM-Ip-CgJ" firstAttribute="top" secondItem="zes-Cb-IDd" secondAttribute="bottom" id="HAK-QM-2fj"/>
+                        <constraint firstItem="EZM-Ip-CgJ" firstAttribute="top" secondItem="zes-Cb-IDd" secondAttribute="bottom" constant="67" id="HAK-QM-2fj"/>
                         <constraint firstItem="EZM-Ip-CgJ" firstAttribute="height" secondItem="zes-Cb-IDd" secondAttribute="height" id="K5a-86-TZJ"/>
                         <constraint firstItem="8oC-J3-Usg" firstAttribute="height" secondItem="zes-Cb-IDd" secondAttribute="height" id="KhS-e8-IvW"/>
                         <constraint firstItem="EZM-Ip-CgJ" firstAttribute="width" secondItem="zes-Cb-IDd" secondAttribute="width" id="RTC-nK-iSu"/>
                         <constraint firstItem="zes-Cb-IDd" firstAttribute="leading" secondItem="4yd-Zn-686" secondAttribute="leading" id="RwV-eI-0RQ"/>
                         <constraint firstItem="8oC-J3-Usg" firstAttribute="leading" secondItem="4yd-Zn-686" secondAttribute="leading" id="TEO-OH-6sv"/>
-                        <constraint firstItem="8oC-J3-Usg" firstAttribute="top" secondItem="EZM-Ip-CgJ" secondAttribute="bottom" id="Y7K-Uu-qCY"/>
+                        <constraint firstItem="8oC-J3-Usg" firstAttribute="top" secondItem="EZM-Ip-CgJ" secondAttribute="bottom" constant="1" id="Y7K-Uu-qCY"/>
                         <constraint firstItem="zes-Cb-IDd" firstAttribute="top" secondItem="4yd-Zn-686" secondAttribute="top" id="eif-vY-vdJ"/>
                         <constraint firstItem="8oC-J3-Usg" firstAttribute="width" secondItem="zes-Cb-IDd" secondAttribute="width" id="jvo-9h-H1H"/>
                         <constraint firstItem="RxE-Na-Cvm" firstAttribute="top" secondItem="8oC-J3-Usg" secondAttribute="bottom" id="sY2-aE-P6a"/>
@@ -121,6 +133,20 @@
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
+                        <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xId-im-v8m">
+                            <rect key="frame" x="229" y="8" width="76" height="26"/>
+                            <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="ljd-wO-WXf">
+                                <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="menu"/>
+                                <menu key="menu" id="8Va-Ee-j2s">
+                                    <items>
+                                        <menuItem title="Item 1" id="6Oh-Wv-y88"/>
+                                        <menuItem title="Item 2" id="HKs-mA-5BX"/>
+                                        <menuItem title="Item 3" id="SmQ-nz-9o8"/>
+                                    </items>
+                                </menu>
+                            </popUpButtonCell>
+                        </popUpButton>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="7KO-B0-Ypr"/>
@@ -149,6 +175,7 @@
         <image name="input-select" width="128" height="128"/>
         <image name="player" width="128" height="128"/>
         <image name="power-off" width="128" height="128"/>
+        <image name="radio" width="128" height="128"/>
         <image name="remote" width="128" height="128"/>
         <image name="sliders" width="128" height="128"/>
         <image name="volume-off" width="128" height="128"/>

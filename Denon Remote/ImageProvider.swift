@@ -12,7 +12,7 @@ import Alamofire
 import AlamofireImage
 
 class ImageProvider: NSObject {
-    static let defaultImage : NSImage? = NSImage(named: "photo")
+    static let defaultImage : NSImage? = NSImage(named: "photo")?.withTemplateColor(Colors.flatWhite)
 
     static func currentImage() -> Promise<NSImage?> {
         return Promise { fulfill, reject in
@@ -37,6 +37,12 @@ class ImageProvider: NSObject {
                     .then{fulfill($0)}
                     .error{_ in fulfill(NSImage(named: "input-net"))}
                 break
+
+            case "USB/IPOD":
+                loadArtwork()
+                    .then{fulfill($0)}
+                    .error{_ in fulfill(NSImage(named: "usb"))}
+                break
             default:
                 fulfill(defaultImage)
             }
@@ -46,7 +52,8 @@ class ImageProvider: NSObject {
 
     static func loadArtwork() -> Promise<NSImage?> {
         return Promise{ fulfill, reject -> Void in
-            Alamofire.request(.GET, "http://192.168.0.211/NetAudio/art.asp-jpg")
+            let host = Amplifier.sharedInstance.host
+            Alamofire.request(.GET, "http://" + host + "/NetAudio/art.asp-jpg")
                 .responseImage { response in
                     if(nil != response.result.error) {
                         reject(response.result.error!)

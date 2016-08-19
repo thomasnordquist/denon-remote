@@ -37,6 +37,8 @@ class Theme: NSObject {
     static let buttonActiveColor = Colors.beliezeHole
     static let backgroundColor = Colors.midnightBlue
     static let foregroundColor = Colors.beliezeHole
+    static let fontColor = Colors.flatWhite
+
     static let MediaControls = ViewStyle(
         borderRadius: 5.0,
         borderWidth: 0.0,

@@ -74,17 +74,24 @@ class MainViewController: NSViewController {
         super.viewDidLoad()
         tweakStyles()
         registerObserver()
+    }
+
+    override func viewWillAppear() {
         updateInfo()
     }
 
     override func viewWillDisappear() {
-        
+        let sheduler = TaskSheduler.sharedSheduler()
+        sheduler.removeTask(.IMAGE)
+        sheduler.offScreen(.DISPLAY, offScreen: true)
+        sheduler.offScreen(.VOLUME, offScreen: true)
+
     }
 
     func updateInfo() {
         let sheduler = TaskSheduler.sharedSheduler()
 
-        let imageTask = Task(identifier: "image", onScreenInterval: 2, offScreenInterval: 10, parallel: true, task:{
+        let imageTask = Task(identifier: .IMAGE, onScreenInterval: 2, offScreenInterval: 10, parallel: true, task:{
             return ImageProvider.currentImage().then{ image -> Promise<AnyObject?> in
                 self.imageView.image = image
                 return Promise(image)
@@ -92,21 +99,14 @@ class MainViewController: NSViewController {
         })
         sheduler.addTask(imageTask)
 
-        let volumeTask = Task(identifier: "volume", onScreenInterval: 2, offScreenInterval: 10, parallel: false, task:{
+        let volumeTask = Task(identifier: .VOLUME, onScreenInterval: 3, offScreenInterval: 10, parallel: false, task:{
             return DenonCommand.VOLUME.QUERY.execute().then{ command -> Promise<AnyObject> in
                 return Promise(command)
             }
         })
         sheduler.addTask(volumeTask)
 
-        let inputTask = Task(identifier: "input", onScreenInterval: 2, offScreenInterval: 10, parallel: false, task:{
-            return DenonCommand.SIGNAL.QUERY.execute().then{ command -> Promise<AnyObject> in
-                return Promise(command)
-            }
-        })
-        sheduler.addTask(inputTask)
-
-        let displayTask = Task(identifier: "display", onScreenInterval: 2, offScreenInterval: 10, parallel: false, task:{
+        let displayTask = Task(identifier: .DISPLAY, onScreenInterval: 2, offScreenInterval: 30, parallel: false, task:{
             return DenonCommand.INFO.DISPLAY.execute().then{ command -> Promise<AnyObject> in
                 guard let info = ResponseParser.parseMusicDisplay(command.response) else {
                     return Promise(command)

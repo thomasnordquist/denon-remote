@@ -59,7 +59,7 @@ class CommandQueue: NSObject {
         
         if(commandQueue.count > 0) {
             free = false
-            NSThread.sleepForTimeInterval(0.2)
+            NSThread.sleepForTimeInterval(0.3)
             let queueElement = nextQueueElement()
             removeElementFromQueue(queueElement)
             let transaction = startTransaction(queueElement.command)

@@ -7,6 +7,14 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="RemoteControlViewController" customModule="Denon_Remote" customModuleProvider="target">
             <connections>
+                <outlet property="buttonDown" destination="0cY-VD-bvx" id="RkG-SR-a83"/>
+                <outlet property="buttonEnter" destination="74T-Wb-75b" id="EWi-Z6-hER"/>
+                <outlet property="buttonLeft" destination="hwD-LG-u5c" id="8RV-Dx-erq"/>
+                <outlet property="buttonPageDown" destination="aoH-UT-klt" id="dOR-QI-eb8"/>
+                <outlet property="buttonPageUp" destination="jrw-tw-qEX" id="ND7-DK-lJ4"/>
+                <outlet property="buttonRight" destination="dgf-XM-83W" id="v5Z-NS-NJ6"/>
+                <outlet property="buttonUp" destination="1Ll-OM-hFj" id="KMw-n8-5gf"/>
+                <outlet property="displayView" destination="fz3-Ya-srJ" id="PdV-Qw-0OV"/>
                 <outlet property="line1" destination="Vx9-eg-ODZ" id="m6C-k7-Cav"/>
                 <outlet property="line2" destination="OCD-uo-AmD" id="3zF-Io-Vjc"/>
                 <outlet property="line3" destination="tDz-2V-jCn" id="9tI-fx-G1I"/>
@@ -23,119 +31,203 @@
             <rect key="frame" x="0.0" y="0.0" width="395" height="256"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <customView translatesAutoresizingMaskIntoConstraints="NO" id="fz3-Ya-srJ">
-                    <rect key="frame" x="25" y="102" width="350" height="134"/>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="fz3-Ya-srJ" customClass="StyledView" customModule="Denon_Remote" customModuleProvider="target">
+                    <rect key="frame" x="25" y="102" width="350" height="154"/>
                     <subviews>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Vx9-eg-ODZ">
-                            <rect key="frame" x="38" y="116" width="294" height="18"/>
+                            <rect key="frame" x="5" y="128" width="323" height="19"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="18" id="cDP-en-Bcn"/>
+                                <constraint firstAttribute="height" constant="19" id="rRk-be-1ot"/>
                             </constraints>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="S7R-2m-YCt">
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Loading display..." id="S7R-2m-YCt">
                                 <font key="font" size="13" name="AndaleMono"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OCD-uo-AmD">
-                            <rect key="frame" x="38" y="98" width="294" height="18"/>
+                            <rect key="frame" x="5" y="109" width="340" height="19"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="18" id="UYS-lg-U3K"/>
+                                <constraint firstAttribute="height" constant="19" id="oML-LW-PhZ"/>
                             </constraints>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="6s4-iB-D9g">
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="6s4-iB-D9g">
                                 <font key="font" size="13" name="AndaleMono"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tDz-2V-jCn">
-                            <rect key="frame" x="38" y="80" width="294" height="18"/>
+                            <rect key="frame" x="5" y="90" width="340" height="19"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="18" id="ltV-DU-CED"/>
+                                <constraint firstAttribute="height" constant="19" id="noU-Xh-4KL"/>
                             </constraints>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="hFA-5N-1mV">
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="hFA-5N-1mV">
                                 <font key="font" size="13" name="AndaleMono"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="s5i-Vi-eOG">
-                            <rect key="frame" x="38" y="62" width="294" height="18"/>
+                            <rect key="frame" x="5" y="71" width="340" height="19"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="18" id="EQv-Oj-OB7"/>
+                                <constraint firstAttribute="height" constant="19" id="mEF-M4-070"/>
                             </constraints>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="rhU-e5-5Ct">
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="rhU-e5-5Ct">
                                 <font key="font" size="13" name="AndaleMono"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9ci-jj-Cpi">
-                            <rect key="frame" x="38" y="44" width="294" height="18"/>
+                            <rect key="frame" x="5" y="52" width="340" height="19"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="18" id="px4-ZR-YpF"/>
+                                <constraint firstAttribute="height" constant="19" id="phO-i7-Zed"/>
                             </constraints>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="tY0-h6-rLF">
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="tY0-h6-rLF">
                                 <font key="font" size="13" name="AndaleMono"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rm5-bn-x6q">
-                            <rect key="frame" x="38" y="26" width="294" height="18"/>
+                            <rect key="frame" x="5" y="33" width="340" height="19"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="18" id="Vdv-dT-GO1"/>
+                                <constraint firstAttribute="height" constant="19" id="qt4-X4-UJk"/>
                             </constraints>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="hM4-4Q-wTM">
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="hM4-4Q-wTM">
                                 <font key="font" size="13" name="AndaleMono"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="j4z-EU-9rN">
-                            <rect key="frame" x="38" y="8" width="294" height="18"/>
+                            <rect key="frame" x="5" y="14" width="323" height="19"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="18" id="eKf-py-Ngf"/>
+                                <constraint firstAttribute="height" constant="19" id="oLm-3t-xRd"/>
                             </constraints>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="zDu-PC-0Vn">
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="zDu-PC-0Vn">
                                 <font key="font" size="13" name="AndaleMono"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
+                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aoH-UT-klt" customClass="StyledButton" customModule="Denon_Remote" customModuleProvider="target">
+                            <rect key="frame" x="326" y="1" width="24" height="24"/>
+                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="angle-double-down" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="z5b-nq-Qio">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="pressButton:" target="-2" id="JCB-EG-l7f"/>
+                            </connections>
+                        </button>
+                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jrw-tw-qEX" customClass="StyledButton" customModule="Denon_Remote" customModuleProvider="target">
+                            <rect key="frame" x="326" y="130" width="24" height="24"/>
+                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="angle-double-up" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="vdc-CE-mN9">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="pressButton:" target="-2" id="kK2-cE-NSC"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="rm5-bn-x6q" secondAttribute="trailing" constant="20" id="4am-yo-2zR"/>
-                        <constraint firstItem="tDz-2V-jCn" firstAttribute="leading" secondItem="fz3-Ya-srJ" secondAttribute="leading" constant="40" id="5jA-pN-ffe"/>
-                        <constraint firstItem="rm5-bn-x6q" firstAttribute="leading" secondItem="fz3-Ya-srJ" secondAttribute="leading" constant="40" id="BFa-4z-BWd"/>
-                        <constraint firstItem="tDz-2V-jCn" firstAttribute="top" secondItem="OCD-uo-AmD" secondAttribute="bottom" id="C9c-te-5u6"/>
-                        <constraint firstItem="j4z-EU-9rN" firstAttribute="top" secondItem="rm5-bn-x6q" secondAttribute="bottom" id="DPn-S6-faO"/>
-                        <constraint firstItem="j4z-EU-9rN" firstAttribute="leading" secondItem="fz3-Ya-srJ" secondAttribute="leading" constant="40" id="HNw-td-Nye"/>
-                        <constraint firstItem="Vx9-eg-ODZ" firstAttribute="top" secondItem="fz3-Ya-srJ" secondAttribute="top" id="JNk-uC-49B"/>
-                        <constraint firstAttribute="trailing" secondItem="Vx9-eg-ODZ" secondAttribute="trailing" constant="20" id="JuK-X2-elu"/>
-                        <constraint firstItem="Vx9-eg-ODZ" firstAttribute="leading" secondItem="fz3-Ya-srJ" secondAttribute="leading" constant="40" id="OMj-GO-eED"/>
-                        <constraint firstAttribute="trailing" secondItem="OCD-uo-AmD" secondAttribute="trailing" constant="20" id="Qc1-UX-6yp"/>
-                        <constraint firstItem="OCD-uo-AmD" firstAttribute="top" secondItem="Vx9-eg-ODZ" secondAttribute="bottom" id="RXw-N4-CTU"/>
-                        <constraint firstAttribute="trailing" secondItem="j4z-EU-9rN" secondAttribute="trailing" constant="20" id="ZBF-pf-cxC"/>
-                        <constraint firstAttribute="trailing" secondItem="tDz-2V-jCn" secondAttribute="trailing" constant="20" id="avf-89-ttx"/>
-                        <constraint firstItem="s5i-Vi-eOG" firstAttribute="top" secondItem="tDz-2V-jCn" secondAttribute="bottom" id="blX-41-Mjr"/>
-                        <constraint firstItem="9ci-jj-Cpi" firstAttribute="top" secondItem="s5i-Vi-eOG" secondAttribute="bottom" id="fLD-K3-rfZ"/>
+                        <constraint firstAttribute="trailing" secondItem="9ci-jj-Cpi" secondAttribute="trailing" constant="7" id="3u6-Yd-Wei"/>
+                        <constraint firstItem="tDz-2V-jCn" firstAttribute="leading" secondItem="fz3-Ya-srJ" secondAttribute="leading" constant="7" id="9vu-k2-JaC"/>
+                        <constraint firstAttribute="trailing" secondItem="tDz-2V-jCn" secondAttribute="trailing" constant="7" id="DIj-sO-CdQ"/>
+                        <constraint firstItem="OCD-uo-AmD" firstAttribute="leading" secondItem="fz3-Ya-srJ" secondAttribute="leading" constant="7" id="GgY-G1-NYV"/>
+                        <constraint firstItem="9ci-jj-Cpi" firstAttribute="top" secondItem="s5i-Vi-eOG" secondAttribute="bottom" id="I4t-1A-G5V"/>
+                        <constraint firstAttribute="trailing" secondItem="s5i-Vi-eOG" secondAttribute="trailing" constant="7" id="PGm-M0-HpF"/>
+                        <constraint firstAttribute="trailing" secondItem="rm5-bn-x6q" secondAttribute="trailing" constant="7" id="UY0-sw-Y1l"/>
+                        <constraint firstAttribute="trailing" secondItem="j4z-EU-9rN" secondAttribute="trailing" constant="24" id="UoO-91-9gz"/>
+                        <constraint firstAttribute="trailing" secondItem="Vx9-eg-ODZ" secondAttribute="trailing" constant="24" id="VCc-7u-gPR"/>
+                        <constraint firstItem="j4z-EU-9rN" firstAttribute="leading" secondItem="fz3-Ya-srJ" secondAttribute="leading" constant="7" id="XVf-L9-dhl"/>
+                        <constraint firstItem="OCD-uo-AmD" firstAttribute="top" secondItem="Vx9-eg-ODZ" secondAttribute="bottom" id="Zao-Ef-Iar"/>
+                        <constraint firstItem="rm5-bn-x6q" firstAttribute="leading" secondItem="fz3-Ya-srJ" secondAttribute="leading" constant="7" id="ZuU-dr-TEq"/>
+                        <constraint firstItem="tDz-2V-jCn" firstAttribute="top" secondItem="OCD-uo-AmD" secondAttribute="bottom" id="b4E-Mr-LWJ"/>
+                        <constraint firstItem="s5i-Vi-eOG" firstAttribute="top" secondItem="tDz-2V-jCn" secondAttribute="bottom" id="b6M-gQ-bHA"/>
+                        <constraint firstItem="9ci-jj-Cpi" firstAttribute="leading" secondItem="fz3-Ya-srJ" secondAttribute="leading" constant="7" id="dWy-ll-gUw"/>
+                        <constraint firstItem="j4z-EU-9rN" firstAttribute="top" secondItem="rm5-bn-x6q" secondAttribute="bottom" id="eTf-aq-OsI"/>
                         <constraint firstAttribute="width" constant="350" id="gWB-ck-MAo"/>
-                        <constraint firstItem="OCD-uo-AmD" firstAttribute="leading" secondItem="fz3-Ya-srJ" secondAttribute="leading" constant="40" id="gxn-mE-aY6"/>
-                        <constraint firstAttribute="trailing" secondItem="9ci-jj-Cpi" secondAttribute="trailing" constant="20" id="ntH-dA-aV2"/>
-                        <constraint firstItem="s5i-Vi-eOG" firstAttribute="leading" secondItem="fz3-Ya-srJ" secondAttribute="leading" constant="40" id="r4Y-u1-RgN"/>
-                        <constraint firstAttribute="trailing" secondItem="s5i-Vi-eOG" secondAttribute="trailing" constant="20" id="shh-OV-Z80"/>
-                        <constraint firstItem="rm5-bn-x6q" firstAttribute="top" secondItem="9ci-jj-Cpi" secondAttribute="bottom" id="tGn-IO-3TH"/>
-                        <constraint firstItem="9ci-jj-Cpi" firstAttribute="leading" secondItem="fz3-Ya-srJ" secondAttribute="leading" constant="40" id="wjc-pg-HOG"/>
+                        <constraint firstAttribute="trailing" secondItem="OCD-uo-AmD" secondAttribute="trailing" constant="7" id="gYv-gv-hLM"/>
+                        <constraint firstItem="rm5-bn-x6q" firstAttribute="top" secondItem="9ci-jj-Cpi" secondAttribute="bottom" id="jbi-7h-knP"/>
+                        <constraint firstItem="Vx9-eg-ODZ" firstAttribute="top" secondItem="fz3-Ya-srJ" secondAttribute="top" constant="7" id="k78-cz-2Ct"/>
+                        <constraint firstItem="s5i-Vi-eOG" firstAttribute="leading" secondItem="fz3-Ya-srJ" secondAttribute="leading" constant="7" id="pLF-p1-4xq"/>
+                        <constraint firstItem="Vx9-eg-ODZ" firstAttribute="leading" secondItem="fz3-Ya-srJ" secondAttribute="leading" constant="7" id="wA7-VL-NDK"/>
                     </constraints>
+                </customView>
+                <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kve-Y3-ES0">
+                    <rect key="frame" x="295" y="14" width="80" height="80"/>
+                    <subviews>
+                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dgf-XM-83W" customClass="StyledButton" customModule="Denon_Remote" customModuleProvider="target">
+                            <rect key="frame" x="56" y="28" width="24" height="24"/>
+                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="arrow-right" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="8uq-qi-mDg">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="pressButton:" target="-2" id="XoG-ka-hxT"/>
+                            </connections>
+                        </button>
+                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hwD-LG-u5c" customClass="StyledButton" customModule="Denon_Remote" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="28" width="24" height="24"/>
+                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="arrow-left" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Oqn-Va-IG5">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="pressButton:" target="-2" id="8mi-vs-SKZ"/>
+                            </connections>
+                        </button>
+                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0cY-VD-bvx" customClass="StyledButton" customModule="Denon_Remote" customModuleProvider="target">
+                            <rect key="frame" x="28" y="0.0" width="24" height="24"/>
+                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="arrow-down" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="zOG-Vl-Nii">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="pressButton:" target="-2" id="8dT-eM-TfB"/>
+                            </connections>
+                        </button>
+                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Ll-OM-hFj" customClass="StyledButton" customModule="Denon_Remote" customModuleProvider="target">
+                            <rect key="frame" x="28" y="56" width="24" height="24"/>
+                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="arrow-up" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="i0g-HG-yha">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="pressButton:" target="-2" id="mMC-9m-EVo"/>
+                            </connections>
+                        </button>
+                        <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="74T-Wb-75b" customClass="StyledButton" customModule="Denon_Remote" customModuleProvider="target">
+                            <rect key="frame" x="28" y="28" width="24" height="24"/>
+                            <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="circle" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="QYl-2h-0FI">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="pressButton:" target="-2" id="xRb-mb-wHa"/>
+                            </connections>
+                        </button>
+                    </subviews>
                 </customView>
             </subviews>
             <constraints>
                 <constraint firstItem="fz3-Ya-srJ" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="25" id="8lo-HP-mAq"/>
-                <constraint firstItem="fz3-Ya-srJ" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" id="aIW-wh-5lj"/>
+                <constraint firstItem="fz3-Ya-srJ" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="aIW-wh-5lj"/>
                 <constraint firstAttribute="bottom" secondItem="fz3-Ya-srJ" secondAttribute="bottom" constant="102" id="oRc-hZ-ZNt"/>
                 <constraint firstAttribute="trailing" secondItem="fz3-Ya-srJ" secondAttribute="trailing" constant="20" id="uJN-tb-pOX"/>
             </constraints>
         </customView>
     </objects>
+    <resources>
+        <image name="angle-double-down" width="128" height="128"/>
+        <image name="angle-double-up" width="128" height="128"/>
+        <image name="arrow-down" width="128" height="128"/>
+        <image name="arrow-left" width="128" height="128"/>
+        <image name="arrow-right" width="128" height="128"/>
+        <image name="arrow-up" width="128" height="128"/>
+        <image name="circle" width="128" height="128"/>
+    </resources>
 </document>

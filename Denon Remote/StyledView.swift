@@ -24,11 +24,18 @@ class StyledView: NSView {
         sublayer.frame = self.bounds
         sublayer.cornerRadius = style.borderRadius
         sublayer.borderWidth = style.borderWidth
+
         //sublayer.backgroundColor = style.backgroundColor.CGColor
     }
 
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
+        subviews.forEach({ view in
+            if let textField = view as? NSTextField {
+                textField.backgroundColor = NSColor.clearColor()
+                textField.textColor = Theme.fontColor
+            }
+        })
 
         // Drawing code here.
     }

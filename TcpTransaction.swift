@@ -42,8 +42,7 @@ class TcpTransaction {
     func beginTransaction() {
         asyncSocket = GCDAsyncSocket(delegate: self, delegateQueue: dispatch_get_main_queue())
         do {
-            let host = "192.168.0.211"
-            //try asyncSocket.connectToHost
+            let host = Amplifier.sharedInstance.host
             try asyncSocket.connectToHost(host, onPort: 23, withTimeout: 0.2)
         } catch {
             reject(NoConnectionError())
@@ -55,8 +54,8 @@ extension TcpTransaction : GCDAsyncSocketDelegate{
     //MARK: Connection Lifecycle
     @objc func socket(sock: GCDAsyncSocket, didConnectToHost host: String, port: UInt16) {
         let operation = (command.operation + "\r").dataUsingEncoding(NSUTF8StringEncoding)!
-        asyncSocket.writeData(operation, withTimeout: 0.1, tag: 0)
-        asyncSocket.readDataWithTimeout(0.1, tag: 0)
+        asyncSocket.writeData(operation, withTimeout: 0.05, tag: 0)
+        asyncSocket.readDataWithTimeout(0.2, tag: 0)
     }
 
     @objc func socket(sock: GCDAsyncSocket, didReadData data: NSData, withTag tag: Int) {

@@ -14,6 +14,8 @@ import PromiseKit
 
 class NavigationViewController: NSViewController {
     var overlayController : NSViewController?
+    @IBOutlet var sourceLabel : NSTextField!
+
     @IBOutlet var overlayView : NSView!
     @IBOutlet var navigationView : StyledView!
 
@@ -26,17 +28,41 @@ class NavigationViewController: NSViewController {
     @IBOutlet var navRemote: NSButton!
     @IBOutlet var navSpeakers: NSButton!
     @IBOutlet var navSettings: NSButton!
+    @IBOutlet var navIRadio: NSButton!
+
+    var iRadioController : NSViewController?
+    var mainViewController : NSViewController?
+    var remoteViewController : NSViewController?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tweakStyles()
-
         overlayController = MainViewController(nibName: "MainViewController", bundle: nil)
         displayCurrentViewController()
     }
 
+    override func viewWillAppear() {
+        addTasks()
+    }
+
+    override func viewWillDisappear() {
+        let sheduler = TaskSheduler.sharedSheduler()
+        sheduler.offScreen(.INPUT, offScreen: true)
+    }
+
+    func addTasks() {
+        let sheduler = TaskSheduler.sharedSheduler()
+        let inputTask = Task(identifier: .INPUT, onScreenInterval: 5, offScreenInterval: 15, parallel: false, task:{
+            return DenonCommand.SIGNAL.QUERY.execute().then{ command -> Promise<AnyObject> in
+                return Promise(command)
+            }
+        })
+        sheduler.addTask(inputTask)
+    }
+
     @IBAction func navigate(sender: StyledButton) {
-        [navPlayer, navRemote, navSettings, navSpeakers].forEach {
+        [navPlayer, navRemote, navSettings, navSpeakers, navIRadio].forEach {
             $0.layer?.backgroundColor = NSColor.clearColor().CGColor
         }
 
@@ -44,16 +70,31 @@ class NavigationViewController: NSViewController {
         sender.layer?.opaque = true
 
         if(nil != overlayController) {
+            overlayController!.dismissController(self)
             overlayController!.view.removeFromSuperview()
             overlayController = nil
         }
 
         switch sender {
         case navPlayer:
-            overlayController = MainViewController(nibName: "MainViewController", bundle: nil)
+            if(nil == mainViewController) {
+                mainViewController = MainViewController(nibName: "MainViewController", bundle: nil)
+            }
+            overlayController = mainViewController
+
             break
         case navRemote:
-            overlayController = RemoteControlViewController(nibName: "RemoteControlViewController", bundle: nil)
+            if(nil == remoteViewController) {
+                remoteViewController = RemoteControlViewController(nibName: "RemoteControlViewController", bundle: nil)
+            }
+            overlayController = remoteViewController
+
+            break
+        case navIRadio:
+            if(nil == iRadioController) {
+                iRadioController = IRadioViewController(nibName: "IRadioViewController", bundle: nil)
+            }
+            overlayController = iRadioController
             break
         default:
             break
@@ -98,6 +139,8 @@ class NavigationViewController: NSViewController {
     func tweakStyles() {
         navigationView.sublayer.backgroundColor = Theme.foregroundColor.CGColor
         navigationView.sublayer.cornerRadius = 0
+        sourceLabel.backgroundColor = NSColor.clearColor()
+        sourceLabel.textColor = Theme.fontColor
 
         view.layer?.backgroundColor = Theme.backgroundColor.CGColor
     }

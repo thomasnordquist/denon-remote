@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		810566A41D6605CA0035B68C /* IRadioScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810566A31D6605CA0035B68C /* IRadioScrollView.swift */; };
+		810566A81D66387B0035B68C /* DenonRadioItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810566A71D66387B0035B68C /* DenonRadioItem.swift */; };
+		810566AA1D6638D30035B68C /* DenonRadioResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810566A91D6638D30035B68C /* DenonRadioResponse.swift */; };
+		810566AC1D6638EF0035B68C /* DenonPlayCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810566AB1D6638EF0035B68C /* DenonPlayCommand.swift */; };
+		810F34771D6491E200A65568 /* DenonRadio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F34761D6491E200A65568 /* DenonRadio.swift */; };
+		810F347B1D64BA4A00A65568 /* IRadioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810F34791D64BA4A00A65568 /* IRadioViewController.swift */; };
+		810F347C1D64BA4A00A65568 /* IRadioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 810F347A1D64BA4A00A65568 /* IRadioViewController.xib */; };
 		81544FC71D5E96EF00306A00 /* TcpTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81544FC61D5E96EF00306A00 /* TcpTransaction.swift */; };
 		81544FC91D5EB4C100306A00 /* ImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81544FC81D5EB4C100306A00 /* ImageProvider.swift */; };
 		81544FCC1D5EC74800306A00 /* NSImage+TemplateColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81544FCB1D5EC74800306A00 /* NSImage+TemplateColor.swift */; };
@@ -19,7 +26,7 @@
 		81ABEE671D6231760080AB22 /* DisplayResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ABEE661D6231760080AB22 /* DisplayResponse.swift */; };
 		81C919581D5C991E00EBB1C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C919571D5C991E00EBB1C7 /* AppDelegate.swift */; };
 		81C9195D1D5C991E00EBB1C7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81C9195B1D5C991E00EBB1C7 /* MainMenu.xib */; };
-		81C919661D5C993E00EBB1C7 /* MediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C919641D5C993E00EBB1C7 /* MediaViewController.swift */; };
+		81C919661D5C993E00EBB1C7 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C919641D5C993E00EBB1C7 /* NavigationViewController.swift */; };
 		81C919671D5C993E00EBB1C7 /* NavigationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81C919651D5C993E00EBB1C7 /* NavigationViewController.xib */; };
 		81C919691D5C994200EBB1C7 /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81C919681D5C994200EBB1C7 /* assets.xcassets */; };
 		81C9196B1D5CBB6100EBB1C7 /* StyledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C9196A1D5CBB6100EBB1C7 /* StyledView.swift */; };
@@ -27,10 +34,11 @@
 		81CC21841D5E5CFD00D7EDBE /* MusicDisplayInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CC21831D5E5CFD00D7EDBE /* MusicDisplayInformation.swift */; };
 		81E149671D5E01F1005AAFA6 /* DataHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E149661D5E01F1005AAFA6 /* DataHub.swift */; };
 		81E149691D5E0495005AAFA6 /* ResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E149681D5E0495005AAFA6 /* ResponseParser.swift */; };
+		81E1EF1F1D65E3480031E87F /* Amplifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E1EF1E1D65E3480031E87F /* Amplifier.swift */; };
 		81FF137C1D5CC59A00617C4C /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FF137B1D5CC59A00617C4C /* StyledButton.swift */; };
 		81FF137E1D5DD7C000617C4C /* CommandQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FF137D1D5DD7C000617C4C /* CommandQueue.swift */; };
 		81FF13801D5DE84300617C4C /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FF137F1D5DE84300617C4C /* Command.swift */; };
-		B3E73202E6970DC1D8D43B7A /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43567EB734E3FEAC64B8EBB3 /* Pods.framework */; };
+		CBDA79D16C3CE57AF0A734E4 /* Pods_Denon_Remote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD24F2AC40225810A0525BD7 /* Pods_Denon_Remote.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +52,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		301F1FEA0CCC25FC2380E942 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		43567EB734E3FEAC64B8EBB3 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BF0E1B843A640FEA3C9C8D4 /* Pods-Denon Remote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Denon Remote.release.xcconfig"; path = "Pods/Target Support Files/Pods-Denon Remote/Pods-Denon Remote.release.xcconfig"; sourceTree = "<group>"; };
+		54C59AF6B4C5CD5175B785E8 /* Pods-Denon Remote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Denon Remote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Denon Remote/Pods-Denon Remote.debug.xcconfig"; sourceTree = "<group>"; };
+		810566A31D6605CA0035B68C /* IRadioScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRadioScrollView.swift; sourceTree = "<group>"; };
+		810566A71D66387B0035B68C /* DenonRadioItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DenonRadioItem.swift; sourceTree = "<group>"; };
+		810566A91D6638D30035B68C /* DenonRadioResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DenonRadioResponse.swift; sourceTree = "<group>"; };
+		810566AB1D6638EF0035B68C /* DenonPlayCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DenonPlayCommand.swift; sourceTree = "<group>"; };
+		810F34761D6491E200A65568 /* DenonRadio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DenonRadio.swift; sourceTree = "<group>"; };
+		810F34791D64BA4A00A65568 /* IRadioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IRadioViewController.swift; sourceTree = "<group>"; };
+		810F347A1D64BA4A00A65568 /* IRadioViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IRadioViewController.xib; sourceTree = "<group>"; };
 		81544FC61D5E96EF00306A00 /* TcpTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TcpTransaction.swift; path = ../TcpTransaction.swift; sourceTree = "<group>"; };
 		81544FC81D5EB4C100306A00 /* ImageProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageProvider.swift; sourceTree = "<group>"; };
 		81544FCB1D5EC74800306A00 /* NSImage+TemplateColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSImage+TemplateColor.swift"; sourceTree = "<group>"; };
@@ -62,7 +77,7 @@
 		81C919571D5C991E00EBB1C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81C9195C1D5C991E00EBB1C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		81C9195E1D5C991E00EBB1C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		81C919641D5C993E00EBB1C7 /* MediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaViewController.swift; sourceTree = "<group>"; };
+		81C919641D5C993E00EBB1C7 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		81C919651D5C993E00EBB1C7 /* NavigationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationViewController.xib; sourceTree = "<group>"; };
 		81C919681D5C994200EBB1C7 /* assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assets.xcassets; sourceTree = "<group>"; };
 		81C9196A1D5CBB6100EBB1C7 /* StyledView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledView.swift; sourceTree = "<group>"; };
@@ -70,10 +85,11 @@
 		81CC21831D5E5CFD00D7EDBE /* MusicDisplayInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicDisplayInformation.swift; sourceTree = "<group>"; };
 		81E149661D5E01F1005AAFA6 /* DataHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHub.swift; sourceTree = "<group>"; };
 		81E149681D5E0495005AAFA6 /* ResponseParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseParser.swift; sourceTree = "<group>"; };
+		81E1EF1E1D65E3480031E87F /* Amplifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Amplifier.swift; sourceTree = "<group>"; };
 		81FF137B1D5CC59A00617C4C /* StyledButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyledButton.swift; sourceTree = "<group>"; };
 		81FF137D1D5DD7C000617C4C /* CommandQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandQueue.swift; sourceTree = "<group>"; };
 		81FF137F1D5DE84300617C4C /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
-		F54734B381D8EED3ED7A9007 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		AD24F2AC40225810A0525BD7 /* Pods_Denon_Remote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Denon_Remote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3E73202E6970DC1D8D43B7A /* Pods.framework in Frameworks */,
+				CBDA79D16C3CE57AF0A734E4 /* Pods_Denon_Remote.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,9 +114,19 @@
 		761CD4D530F740ABF314EEEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				43567EB734E3FEAC64B8EBB3 /* Pods.framework */,
+				AD24F2AC40225810A0525BD7 /* Pods_Denon_Remote.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		810F34781D64927300A65568 /* DenonRadio */ = {
+			isa = PBXGroup;
+			children = (
+				810566A71D66387B0035B68C /* DenonRadioItem.swift */,
+				810566A91D6638D30035B68C /* DenonRadioResponse.swift */,
+				810566AB1D6638EF0035B68C /* DenonPlayCommand.swift */,
+			);
+			name = DenonRadio;
 			sourceTree = "<group>";
 		};
 		81544FCA1D5EBADF00306A00 /* Communication */ = {
@@ -110,6 +136,7 @@
 				81FF137D1D5DD7C000617C4C /* CommandQueue.swift */,
 				81E149681D5E0495005AAFA6 /* ResponseParser.swift */,
 				81E149661D5E01F1005AAFA6 /* DataHub.swift */,
+				810F34761D6491E200A65568 /* DenonRadio.swift */,
 			);
 			name = Communication;
 			sourceTree = "<group>";
@@ -130,6 +157,9 @@
 				81ABEE631D6220B80080AB22 /* MainViewController.xib */,
 				81ABEE601D6216130080AB22 /* RemoteControlViewController.swift */,
 				81ABEE5E1D6215F20080AB22 /* RemoteControlViewController.xib */,
+				810F34791D64BA4A00A65568 /* IRadioViewController.swift */,
+				810F347A1D64BA4A00A65568 /* IRadioViewController.xib */,
+				810566A31D6605CA0035B68C /* IRadioScrollView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -162,9 +192,10 @@
 				81ABEE5D1D6215D40080AB22 /* View */,
 				81CC21821D5E5CC000D7EDBE /* Model */,
 				81C9196C1D5CBE9300EBB1C7 /* Theme.swift */,
+				81E1EF1E1D65E3480031E87F /* Amplifier.swift */,
 				81C919571D5C991E00EBB1C7 /* AppDelegate.swift */,
 				81C919651D5C993E00EBB1C7 /* NavigationViewController.xib */,
-				81C919641D5C993E00EBB1C7 /* MediaViewController.swift */,
+				81C919641D5C993E00EBB1C7 /* NavigationViewController.swift */,
 				81544FCF1D5F5CD500306A00 /* TaskSheduler.swift */,
 				81544FC81D5EB4C100306A00 /* ImageProvider.swift */,
 				81544FCB1D5EC74800306A00 /* NSImage+TemplateColor.swift */,
@@ -178,6 +209,7 @@
 		81CC21821D5E5CC000D7EDBE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				810F34781D64927300A65568 /* DenonRadio */,
 				81FF137F1D5DE84300617C4C /* Command.swift */,
 				81CC21831D5E5CFD00D7EDBE /* MusicDisplayInformation.swift */,
 				81ABEE661D6231760080AB22 /* DisplayResponse.swift */,
@@ -197,8 +229,8 @@
 		95DC674AA54E924D6F75DF04 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F54734B381D8EED3ED7A9007 /* Pods.debug.xcconfig */,
-				301F1FEA0CCC25FC2380E942 /* Pods.release.xcconfig */,
+				54C59AF6B4C5CD5175B785E8 /* Pods-Denon Remote.debug.xcconfig */,
+				3BF0E1B843A640FEA3C9C8D4 /* Pods-Denon Remote.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -228,12 +260,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 81C919611D5C991E00EBB1C7 /* Build configuration list for PBXNativeTarget "Denon Remote" */;
 			buildPhases = (
-				A8AC0C0BE6CC7157CA09A1FA /* Check Pods Manifest.lock */,
+				A8AC0C0BE6CC7157CA09A1FA /* [CP] Check Pods Manifest.lock */,
 				81C919501D5C991E00EBB1C7 /* Sources */,
 				81C919511D5C991E00EBB1C7 /* Frameworks */,
 				81C919521D5C991E00EBB1C7 /* Resources */,
-				7107A0F11A13EECDF1241C44 /* Embed Pods Frameworks */,
-				28F74A2F6CBCDA2B722FFA58 /* Copy Pods Resources */,
+				7107A0F11A13EECDF1241C44 /* [CP] Embed Pods Frameworks */,
+				28F74A2F6CBCDA2B722FFA58 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -296,6 +328,7 @@
 			files = (
 				81ABEE5F1D6215F20080AB22 /* RemoteControlViewController.xib in Resources */,
 				81C919671D5C993E00EBB1C7 /* NavigationViewController.xib in Resources */,
+				810F347C1D64BA4A00A65568 /* IRadioViewController.xib in Resources */,
 				81ABEE651D6220B80080AB22 /* MainViewController.xib in Resources */,
 				81C919691D5C994200EBB1C7 /* assets.xcassets in Resources */,
 				81C9195D1D5C991E00EBB1C7 /* MainMenu.xib in Resources */,
@@ -305,44 +338,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		28F74A2F6CBCDA2B722FFA58 /* Copy Pods Resources */ = {
+		28F74A2F6CBCDA2B722FFA58 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Denon Remote/Pods-Denon Remote-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7107A0F11A13EECDF1241C44 /* Embed Pods Frameworks */ = {
+		7107A0F11A13EECDF1241C44 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Denon Remote/Pods-Denon Remote-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A8AC0C0BE6CC7157CA09A1FA /* Check Pods Manifest.lock */ = {
+		A8AC0C0BE6CC7157CA09A1FA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,21 +399,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				81C919581D5C991E00EBB1C7 /* AppDelegate.swift in Sources */,
+				810566A41D6605CA0035B68C /* IRadioScrollView.swift in Sources */,
 				81E149671D5E01F1005AAFA6 /* DataHub.swift in Sources */,
+				810F34771D6491E200A65568 /* DenonRadio.swift in Sources */,
 				81544FD01D5F5CD500306A00 /* TaskSheduler.swift in Sources */,
 				81FF137E1D5DD7C000617C4C /* CommandQueue.swift in Sources */,
+				810566AA1D6638D30035B68C /* DenonRadioResponse.swift in Sources */,
 				81544FC71D5E96EF00306A00 /* TcpTransaction.swift in Sources */,
 				81C9196D1D5CBE9300EBB1C7 /* Theme.swift in Sources */,
 				81FF137C1D5CC59A00617C4C /* StyledButton.swift in Sources */,
 				81ABEE641D6220B80080AB22 /* MainViewController.swift in Sources */,
 				81ABEE671D6231760080AB22 /* DisplayResponse.swift in Sources */,
 				81544FCC1D5EC74800306A00 /* NSImage+TemplateColor.swift in Sources */,
+				81E1EF1F1D65E3480031E87F /* Amplifier.swift in Sources */,
+				810566A81D66387B0035B68C /* DenonRadioItem.swift in Sources */,
 				81FF13801D5DE84300617C4C /* Command.swift in Sources */,
-				81C919661D5C993E00EBB1C7 /* MediaViewController.swift in Sources */,
+				81C919661D5C993E00EBB1C7 /* NavigationViewController.swift in Sources */,
 				81544FC91D5EB4C100306A00 /* ImageProvider.swift in Sources */,
+				810566AC1D6638EF0035B68C /* DenonPlayCommand.swift in Sources */,
 				81CC21841D5E5CFD00D7EDBE /* MusicDisplayInformation.swift in Sources */,
 				81ABEE611D6216130080AB22 /* RemoteControlViewController.swift in Sources */,
 				81C9196B1D5CBB6100EBB1C7 /* StyledView.swift in Sources */,
+				810F347B1D64BA4A00A65568 /* IRadioViewController.swift in Sources */,
 				81E149691D5E0495005AAFA6 /* ResponseParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,12 +557,17 @@
 		};
 		81C919621D5C991E00EBB1C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F54734B381D8EED3ED7A9007 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 54C59AF6B4C5CD5175B785E8 /* Pods-Denon Remote.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/opt/openssl/include;
 				INFOPLIST_FILE = "Denon Remote/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
+					/usr/local/opt/openssl/lib,
+					/usr/local/opt/openssl/include,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.t7n.osx.Denon-Remote";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -530,7 +575,7 @@
 		};
 		81C919631D5C991E00EBB1C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 301F1FEA0CCC25FC2380E942 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 3BF0E1B843A640FEA3C9C8D4 /* Pods-Denon Remote.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;

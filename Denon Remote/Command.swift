@@ -43,6 +43,16 @@ struct DenonCommand {
         }
     }
 
+    struct CONTROL {
+        static let UP = CommandType(prefix: "NS", parameter: "90", lines: 0)
+        static let DOWN = CommandType(prefix: "NS", parameter: "91", lines: 0)
+        static let LEFT = CommandType(prefix: "NS", parameter: "92", lines: 0)
+        static let RIGHT = CommandType(prefix: "NS", parameter: "93", lines: 0)
+        static let ENTER = CommandType(prefix: "NS", parameter: "94", lines: 0)
+        static let PAGE_PREVIOUS = CommandType(prefix: "NS", parameter: "9Y", lines: 0)
+        static let PAGE_NEXT = CommandType(prefix: "NS", parameter: "9X", lines: 0)
+    }
+
     struct INFO {
         static let DISPLAY = CommandType(prefix: "NS", parameter: "E", lines: 9) //UTF8
     }

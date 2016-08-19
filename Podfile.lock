@@ -1,11 +1,17 @@
 PODS:
+  - AEXML (3.0.0)
   - Alamofire (3.4.1)
   - AlamofireImage (2.4.1):
     - Alamofire (~> 3.3)
+  - AlamofireXmlToObjects (1.2.0):
+    - Alamofire
+    - EVReflection
+    - XMLDictionary
   - CocoaAsyncSocket (7.5.0):
     - CocoaAsyncSocket/GCD (= 7.5.0)
   - CocoaAsyncSocket/GCD (7.5.0)
   - Colours/Swift (5.13.0)
+  - EVReflection (2.45.0)
   - OMGHTTPURLRQ (3.2.0):
     - OMGHTTPURLRQ/RQ (= 3.2.0)
   - OMGHTTPURLRQ/FormURLEncode (3.2.0)
@@ -13,6 +19,7 @@ PODS:
     - OMGHTTPURLRQ/FormURLEncode
     - OMGHTTPURLRQ/UserAgent
   - OMGHTTPURLRQ/UserAgent (3.2.0)
+  - OpenSSL (1.0.208)
   - PromiseKit (3.5.0):
     - PromiseKit/Foundation (= 3.5.0)
     - PromiseKit/QuartzCore (= 3.5.0)
@@ -26,24 +33,36 @@ PODS:
   - PromiseKit/UIKit (3.5.0):
     - PromiseKit/CorePromise
   - SwiftSockets (0.22.2)
+  - SWXMLHash (2.5.0)
+  - XMLDictionary (1.4)
 
 DEPENDENCIES:
+  - AEXML
   - Alamofire (~> 3.4)
   - AlamofireImage (~> 2.0)
+  - AlamofireXmlToObjects
   - CocoaAsyncSocket
   - Colours/Swift
+  - OpenSSL
   - PromiseKit (~> 3.4)
   - SwiftSockets
+  - SWXMLHash (~> 2.5.0)
 
 SPEC CHECKSUMS:
+  AEXML: 716fb0a8decba4a3517324a71fee3685b30233d2
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   AlamofireImage: 3ccf3347d9ea24580dc11fb892770a0be6a29826
+  AlamofireXmlToObjects: 350a3d24e24fe836904598d276080d9519f978cf
   CocoaAsyncSocket: 3baeb1ddd969f81cf9fca81053ae49ef2d1cbbfa
   Colours: f24220c38f13deac88612667e9b4a7fb96b871d4
+  EVReflection: aa7065b5757b4efd7265cdb17074aeef57c3f981
   OMGHTTPURLRQ: 1e54807cb7d5dbb506926e53498e1e9ac5720c79
+  OpenSSL: b187269d386b07452f56af273764ea0636dd5da8
   PromiseKit: 3a8a529c0571f8c2c423dba0897ff39bc060bf92
   SwiftSockets: d916d27000b05fd7cb89ce27047d70242fd31596
+  SWXMLHash: 04158642e0c90c52274db7914032edd41bed9a41
+  XMLDictionary: f9f51601ba76678b594ab485f2b00ec1fed23724
 
-PODFILE CHECKSUM: 2082d6e2ac2371309107fdd392927435ebea79ab
+PODFILE CHECKSUM: 198a74b3dc72ca2de97f5a7f8c82d012330a866b
 
 COCOAPODS: 1.0.1

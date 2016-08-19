@@ -24,7 +24,9 @@ class StyledButton: NSButton {
         sublayer.frame = self.bounds
 
         let _image : NSImage = image!.copy() as! NSImage
+
         image = _image.withTemplateColor(Theme.buttonColor)
+        //image = image!.scaledToCenter()
         alternateImage = _image.withTemplateColor(Theme.buttonActiveColor)
     }
 
