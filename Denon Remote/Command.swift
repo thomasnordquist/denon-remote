@@ -17,6 +17,16 @@ struct DenonCommand {
         }
     }
 
+    struct SLEEP {
+        static let QUERY = CommandType(prefix: "SLP", parameter: "?", lines: 2)
+        static let OFF = CommandType(prefix: "SLP", parameter: "OFF", lines: 2)
+        static func PARAMETER(minutes : Int) -> CommandType {
+            let clippedMinutes = min(max(0, minutes), 120)
+            let minutesPrefixedWithZeros = String(format: "%03d", clippedMinutes)
+            return CommandType(prefix: "SLP", parameter: minutesPrefixedWithZeros, lines: 1)
+        }
+    }
+
     struct POWER {
         static let ON = CommandType(prefix: "PW", parameter: "ON", lines: 0)
         static let OFF = CommandType(prefix: "PW", parameter: "STANDBY", lines: 0)
