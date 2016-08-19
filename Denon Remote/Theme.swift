@@ -14,7 +14,7 @@ struct ViewStyle {
 }
 
 // https://flatuicolors.com/
-class Colors {
+struct Colors {
     static let flatWhite = NSColor(colorLiteralRed: 0.925, green: 0.941, blue: 0.945, alpha: 1) // clouds
     static let beliezeHole = NSColor(colorLiteralRed: 0.161, green: 0.502, blue: 0.725, alpha: 1) // belieze hole
 
@@ -25,13 +25,10 @@ class Colors {
     static let bluetoothBlue = NSColor(colorLiteralRed: 0.0, green: 0.3394, blue: 0.6606, alpha: 1)
 }
 
-class Theme: NSObject {
+struct Theme {
     static let bluetoothBlue = Colors.bluetoothBlue
 
     static let ecoGreen = Colors.emerald
-
-    static let buttonPowerColorOff = NSColor(colorLiteralRed: 0.9, green: 0.9, blue: 0.9, alpha: 1)
-    static let buttonPowerColorOn = NSColor(colorLiteralRed: 0.9, green: 0.9, blue: 0.9, alpha: 1)
 
     static let buttonColor = Colors.flatWhite
     static let buttonActiveColor = Colors.beliezeHole
@@ -44,5 +41,10 @@ class Theme: NSObject {
         borderWidth: 0.0,
         backgroundColor: NSColor(colorLiteralRed: 0, green: 0, blue: 0, alpha: 0.3)
     )
+
+    struct power {
+        static let standby = NSColor(colorLiteralRed: 0.8, green: 0.3, blue: 0.24, alpha: 1)
+        static let on = NSColor(colorLiteralRed: 0.3, green: 0.9, blue: 0.24, alpha: 1)
+    }
 
 }

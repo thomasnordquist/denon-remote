@@ -31,6 +31,8 @@ class NavigationViewController: NSViewController {
     @IBOutlet var navSettings: NSButton!
     @IBOutlet var navIRadio: NSButton!
 
+    @IBOutlet var powerButton: StyledButton!
+
     var iRadioController : NSViewController?
     var mainViewController : NSViewController?
     var remoteViewController : NSViewController?
@@ -39,6 +41,7 @@ class NavigationViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tweakStyles()
+        registerObserver()
         overlayController = MainViewController(nibName: "MainViewController", bundle: nil)
         displayCurrentViewController()
     }
@@ -60,6 +63,29 @@ class NavigationViewController: NSViewController {
             }
         })
         sheduler.addTask(inputTask)
+
+        let powerTask = Task(identifier: .POWER, onScreenInterval: 5, offScreenInterval: 20, parallel: false, task:{
+            return DenonCommand.POWER.QUERY.execute().then{ command -> Promise<AnyObject> in
+                return Promise(command)
+            }
+        })
+        sheduler.addTask(powerTask)
+    }
+
+    func registerObserver() {
+        let notifications = NSNotificationCenter.defaultCenter()
+        notifications.addObserver(self, selector: #selector(self.updatePower), name: "PW", object: nil)
+    }
+
+    func updatePower() {
+        guard let state = DataHub.getState("PW") else {
+            return
+        }
+        if (state == .STANDBY) {
+            powerButton.setColor(Theme.power.standby)
+        } else {
+            powerButton.setColor(Theme.power.on)
+        }
     }
 
     @IBAction func navigate(sender: StyledButton) {
@@ -106,7 +132,6 @@ class NavigationViewController: NSViewController {
 
     func displayCurrentViewController() {
         if(nil != overlayController) {
-            print("add subview")
             overlayView.addSubview(overlayController!.view)
         }
     }
